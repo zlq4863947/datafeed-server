@@ -1,0 +1,49 @@
+{
+  "name": "datafeed-server",
+  "version": "0.0.9",
+  "description": "tradingview datafeed server",
+  "repository": {
+    "type": "git",
+    "url": "https://gitee.com/proficient-tradingvi/datafeed-server"
+  },
+  "license": "GPL3",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "start": "node dist/index.js",
+    "start:watch": "nodemon",
+    "debug": "node --inspect dist/index.js",
+    "rm": "rimraf dist",
+    "tsc": "npm run rm && tsc -p tsconfig.development.json",
+    "tslint": "tslint --project ./tslint.json",
+    "test": "cross-env NODE_ENV=test mocha dist/**/*.test.js --timeout 5000 --require intelli-espower-loader",
+    "prepare": "npm run rm && tsc -p tsconfig.json"
+  },
+  "dependencies": {
+    "config": "^1.26.1",
+    "cross-env": "^5.1.5",
+    "isomorphic-fetch": "^2.2.1",
+    "rimraf": "^2.6.2",
+    "toml": "^2.3.3"
+  },
+  "devDependencies": {
+    "@nestjs/common": "^5.0.0",
+    "@nestjs/core": "^5.0.0",
+    "@nestjs/microservices": "^5.0.0",
+    "@nestjs/testing": "^5.0.0",
+    "@nestjs/websockets": "^5.0.0",
+    "@types/isomorphic-fetch": "0.0.34",
+    "@types/mocha": "^5.2.0",
+    "@types/node": "^10.0.8",
+    "@types/power-assert": "^1.5.0",
+    "intelli-espower-loader": "^1.0.1",
+    "mocha": "^5.1.1",
+    "nodemon": "^1.17.4",
+    "power-assert": "^1.5.0",
+    "reflect-metadata": "^0.1.12",
+    "rxjs": "^6.1.0",
+    "ts-node": "^6.0.3",
+    "tslint": "^5.10.0",
+    "typescript": "^2.8.3"
+  }
+}
