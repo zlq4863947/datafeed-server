@@ -13,6 +13,7 @@ npm-debug.log
 .git
 .travis.yml
 .history
+.prettierrc
 appveyor.yml
 package-lock.json
 tsconfig.development.json

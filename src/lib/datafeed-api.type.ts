@@ -133,7 +133,6 @@ export interface LibrarySymbolInfo {
   pricescale: number;
   /**
    * The number of units that make up one tick.
-   * @example For example, U.S. equities are quotes in decimals, and tick in decimals, and can go up +/- .01. So the tick increment is 1. But the e-mini S&P futures contract, though quoted in decimals, goes up in .25 increments, so the tick increment is 25. (see also Tick Size)
    */
   minmov: number;
   fractional?: boolean;
@@ -291,5 +290,3 @@ export interface IDatafeedChartApi {
   subscribeDepth?(symbolInfo: LibrarySymbolInfo, callback: DomeCallback): string;
   unsubscribeDepth?(subscriberUID: string): void;
 }
-
-export as namespace TradingView;

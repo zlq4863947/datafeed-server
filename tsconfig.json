@@ -6,17 +6,20 @@
     "strict": true,
     "types": ["node", "mocha"],
     "typeRoots": ["./node_modules/@types"],
-    "rootDir": "./src",
+    "rootDirs": ["./src","./test"],
     "outDir": "./dist",
     "noImplicitAny": false,
     "removeComments": true,
     "noLib": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "allowJs": true,
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "include": ["./src/**/*.ts"],
+  "include": [
+    "./src/**/*.ts",
+    "./test/**/*.ts"
+  ],
   "exclude": ["node_modules"]
 }

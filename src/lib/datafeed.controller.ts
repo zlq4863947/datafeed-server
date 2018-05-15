@@ -5,7 +5,7 @@ import { HttpExceptionFilter } from './http-exception.filter';
 
 @Controller()
 export class DatafeedController {
-  constructor(private datafeedService: DatafeedService) { }
+  constructor(private datafeedService: DatafeedService) {}
 
   private setDefaultHeader(res: any) {
     res.header('Access-Control-Allow-Origin', '*');
