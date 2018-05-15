@@ -10,7 +10,7 @@ npm install datafeed-server
 ## 启动
 
 ```
-import { DatafeedApp, IDatafeeder } from '../src/index';
+import { DatafeedApp, IDatafeeder } from 'datafeed-server';
 
 (async function bootstrap() {
   const datafeeder: IDatafeeder = {
