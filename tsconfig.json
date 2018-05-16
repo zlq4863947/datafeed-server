@@ -12,8 +12,7 @@
     "removeComments": true,
     "noLib": false,
     "sourceMap": false,
-    "allowJs": true,
-    "declaration": false,
+    "declaration": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
