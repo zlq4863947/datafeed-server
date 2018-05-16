@@ -1,7 +1,6 @@
 import { Component, HttpStatus } from '@nestjs/common';
 
 import * as IDatafeed from './datafeed-api.type';
-import * as fetch from 'isomorphic-fetch';
 import * as IDatafeedServ from './datafeeder.type';
 
 export interface UdfCompatibleConfiguration extends IDatafeed.DatafeedConfiguration {

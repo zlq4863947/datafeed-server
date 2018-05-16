@@ -1,6 +1,6 @@
 {
   "name": "datafeed-server",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "tradingview datafeed server",
   "repository": {
     "type": "git",
@@ -15,11 +15,12 @@
     "tsc": "npm run rm && tsc -p tsconfig.development.json",
     "tslint": "tslint --project ./tslint.json",
     "test:start": "node dist/test/start.test.js",
+    "test:req": "cross-env NODE_ENV=test mocha dist/**/requester.test.js --timeout 5000 --require intelli-espower-loader",
     "test": "cross-env NODE_ENV=test mocha dist/**/*.test.js --timeout 5000 --require intelli-espower-loader",
     "prepare": "npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
+    "node-fetch": "^2.1.2"
   },
   "devDependencies": {
     "@nestjs/common": "4.5.1",

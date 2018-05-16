@@ -21,4 +21,8 @@ import { DatafeedApp, IDatafeeder } from '../src/index';
     datafeeder,
   });
   await app.start();
+
+  setTimeout(async () => {
+    await app.close();
+  }, 1500);
 })();

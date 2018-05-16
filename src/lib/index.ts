@@ -8,6 +8,7 @@ import { IDatafeeder } from './datafeeder.type';
 export * from './datafeed-api.type';
 export * from './datafeeder.type';
 export * from './datafeed.service';
+export * from './requester';
 
 export interface IDatafeedAppOptions {
   port?: number;

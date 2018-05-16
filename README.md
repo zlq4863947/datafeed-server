@@ -34,3 +34,25 @@ import { DatafeedApp, IDatafeeder } from 'datafeed-server';
   await app.start();
 })();
 ```
+
+## rest-api 请求
+
+```
+  import { RequestParams, Requester } from 'datafeed-server';
+
+  const getHuobiHistory = async () => {
+    const apiUrl = 'https://api.huobipro.com';
+
+
+    const requestParams: RequestParams = {
+      symbol: 'btcusdt',
+      period: '1day',
+      size: 200
+    };
+
+    const requester = new Requester();
+    const res = await requester.send(apiUrl, '/market/history/kline', requestParams);
+    console.log(res);
+  };
+
+```
