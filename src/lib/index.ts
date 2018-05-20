@@ -28,7 +28,7 @@ export class DatafeedApp {
   private initService(service: DatafeedService) {
     const datafeeder = this.datafeeder;
     if (datafeeder.supported_resolutions) {
-      service.supported_resolutions = service.supported_resolutions;
+      service.supported_resolutions = datafeeder.supported_resolutions;
     }
     if (datafeeder.getConfig) {
       service.getConfig = datafeeder.getConfig;
@@ -37,8 +37,12 @@ export class DatafeedApp {
       service.getServerTime = datafeeder.getServerTime;
     }
     service.resolveSymbol = datafeeder.resolveSymbol;
-    service.getHistory = service.getHistory;
-    service.searchSymbols = service.searchSymbols;
+    service.getHistory = datafeeder.getHistory;
+    service.searchSymbols = datafeeder.searchSymbols;
+    const keys = Object.keys(datafeeder);
+    for (const key of keys) {
+        service[key] = datafeeder[key];
+    }
   }
 
   async start() {
