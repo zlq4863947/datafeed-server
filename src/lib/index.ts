@@ -4,6 +4,7 @@ import { AppModule } from './app.module';
 import { DatafeedService } from './datafeed.service';
 import { HttpExceptionFilter } from './http-exception.filter';
 import { IDatafeeder } from './datafeeder.type';
+import * as cors from 'cors';
 
 export * from './datafeed-api.type';
 export * from './datafeeder.type';
@@ -47,6 +48,8 @@ export class DatafeedApp {
 
   async start() {
     this.app = await NestFactory.create(AppModule);
+    this.app.use(cors())
+    // this.app.enableCors();
     this.app.useGlobalFilters(new HttpExceptionFilter());
     const service = this.app.select(AppModule).get(DatafeedService);
     this.initService(service);

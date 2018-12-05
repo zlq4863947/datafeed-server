@@ -1,6 +1,6 @@
 {
   "name": "datafeed-server",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "tradingview datafeed server",
   "repository": {
     "type": "git",
@@ -20,12 +20,13 @@
     "prepare": "npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
+    "@nestjs/common": "4.5.1",
+    "@nestjs/core": "4.5.1",
+    "cors": "^2.8.5",
+    "node-fetch": "^2.1.2",
     "reflect-metadata": "0.1.10",
     "rimraf": "^2.6.2",
-    "rxjs": "^5.5.2",
-    "@nestjs/core": "4.5.1",
-    "@nestjs/common": "4.5.1",
-    "node-fetch": "^2.1.2"
+    "rxjs": "^5.5.2"
   },
   "devDependencies": {
     "@nestjs/microservices": "4.5.1",
