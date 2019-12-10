@@ -16,4 +16,5 @@ export interface IDatafeeder extends ISimpleDatafeeder {
   supported_resolutions?: string[];
   getConfig?: () => UdfCompatibleConfiguration;
   getServerTime?: () => string;
+  custom?: (json: string) => any;
 }

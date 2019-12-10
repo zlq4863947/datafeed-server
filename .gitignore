@@ -60,6 +60,7 @@ typings/
 .history
 dist
 .vscode
+.idea
 config/development.toml
 config/test.toml
 config/default.toml

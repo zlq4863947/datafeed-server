@@ -84,4 +84,16 @@ export class DatafeedController {
       throw new HttpException(e.message, HttpStatus.OK);
     }
   }
+
+  @Get('custom')
+  async custom(@Response() res: any, @Query('json') json: string) {
+    console.log(new Date().toLocaleString(), '- GET custom, json: ', json);
+    try {
+      this.setDefaultHeader(res);
+      const searchRes = await this.datafeedService.custom(json);
+      res.status(HttpStatus.OK).send(searchRes);
+    } catch (e) {
+      throw new HttpException(e.message, HttpStatus.OK);
+    }
+  }
 }

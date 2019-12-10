@@ -37,18 +37,21 @@ export class DatafeedApp {
     if (datafeeder.getServerTime) {
       service.getServerTime = datafeeder.getServerTime;
     }
+    if (datafeeder.custom) {
+      service.custom = datafeeder.custom;
+    }
     service.resolveSymbol = datafeeder.resolveSymbol;
     service.getHistory = datafeeder.getHistory;
     service.searchSymbols = datafeeder.searchSymbols;
     const keys = Object.keys(datafeeder);
     for (const key of keys) {
-        service[key] = datafeeder[key];
+      service[key] = datafeeder[key];
     }
   }
 
   async start() {
     this.app = await NestFactory.create(AppModule);
-    this.app.use(cors())
+    this.app.use(cors());
     // this.app.enableCors();
     this.app.useGlobalFilters(new HttpExceptionFilter());
     const service = this.app.select(AppModule).get(DatafeedService);

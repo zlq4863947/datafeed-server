@@ -44,4 +44,8 @@ export class DatafeedService implements IDatafeedServ.IDatafeeder {
   ): Promise<IDatafeed.SearchSymbolResultItem[] | undefined> {
     return;
   }
+
+  async custom(json: string): Promise<any> {
+    return;
+  }
 }

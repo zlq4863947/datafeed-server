@@ -35,7 +35,7 @@ import { DatafeedApp, IDatafeeder } from 'datafeed-server';
 })();
 ```
 
-## rest-api 请求
+## rest-api 请求功能
 
 ```
   import { RequestParams, Requester } from 'datafeed-server';
@@ -56,3 +56,26 @@ import { DatafeedApp, IDatafeeder } from 'datafeed-server';
   };
 
 ```
+
+## 自定义接口功能
+
+````
+import { DatafeedApp, IDatafeeder } from 'datafeed-server';
+
+(async function bootstrap() {
+  const datafeeder: IDatafeeder = {
+    custom: async (json: string) => {
+      console.log('custom, json:', JSON.parse(json));
+    },
+    ...
+  };
+  const app = new DatafeedApp({
+    port: 3000,
+    datafeeder,
+  });
+  await app.start();
+})();
+```
+
+请求例： http://127.0.0.1:3000/custom?json={"a":1,"b":"sss"}
+控制台输出：custom, json: { a: 1, b: 'sss' }

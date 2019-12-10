@@ -1,4 +1,3 @@
-
 import { DatafeedApp, IDatafeeder } from '../src/index';
 
 (async () => {
