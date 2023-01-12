@@ -20,7 +20,7 @@
     "prepare": "npm run rm && tsc -p tsconfig.json"
   },
   "dependencies": {
-    "@nestjs/common": "4.5.1",
+    "@nestjs/common": "9.2.1",
     "@nestjs/core": "4.5.1",
     "cors": "^2.8.5",
     "node-fetch": "^2.1.2",
